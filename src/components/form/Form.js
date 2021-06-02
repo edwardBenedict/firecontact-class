@@ -2,11 +2,7 @@ import React from "react";
 import { Button, Form, Grid, Segment } from "semantic-ui-react";
 import { options } from "../../utils/contants";
 
-const FormComponent = ({ info, setInfo }) => {
-  const handleFormSubmit = () => {
-    console.log({ info });
-  };
-
+const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
