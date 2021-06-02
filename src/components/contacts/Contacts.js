@@ -25,7 +25,7 @@ const Contacts = ({ updateFormHandler }) => {
                 <p>Loading..</p>
               </Table.Cell>
             </Table.Row>
-          ) : contactList.length === 0 ? (
+          ) : contactList?.length === 0 ? (
             <Table.Row>
               <Table.Cell colSpan={5} textAlign="center">
                 <p className="nothing-found">Nothing Found!</p>
