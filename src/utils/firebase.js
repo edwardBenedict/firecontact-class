@@ -2,12 +2,12 @@ import firebase from "firebase/app";
 import "firebase/database";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyCCxxueKUzY2kov0eVR1pb8FFNIhXQCqxY",
-  authDomain: "firecontact-6a233.firebaseapp.com",
-  projectId: "firecontact-6a233",
-  storageBucket: "firecontact-6a233.appspot.com",
-  messagingSenderId: "831104255149",
-  appId: "1:831104255149:web:0c97d224299979bb0e3224",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
