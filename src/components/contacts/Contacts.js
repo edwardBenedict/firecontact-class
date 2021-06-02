@@ -4,7 +4,6 @@ import { useFetch, deleteHandler } from "../../utils/functions";
 
 const Contacts = ({ updateFormHandler }) => {
   const { contactList, isLoading } = useFetch();
-  console.log(contactList);
 
   return (
     <div>

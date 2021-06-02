@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Contacts from "./components/contacts/Contacts";
 import Form from "./components/form/Form";
-import { addInfo } from "./utils/functions";
+import { addInfo, updateHandler } from "./utils/functions";
+import { ToastContainer } from "react-toastify";
 
 const initialValues = { username: "", phoneNumber: "", gender: "NO INFO!" };
 
@@ -10,12 +11,16 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    addInfo(info);
+    if (info.id) {
+      updateHandler(info);
+    } else {
+      addInfo(info);
+    }
+    setInfo(initialValues);
   };
 
   const updateFormHandler = (id, username, phoneNumber, gender) => {
-    setInfo(id, username, phoneNumber, gender);
+    setInfo({ id, username, phoneNumber, gender });
   };
 
   return (
@@ -27,6 +32,7 @@ function App() {
         handleFormSubmit={handleFormSubmit}
       />
       <Contacts className="contacts" updateFormHandler={updateFormHandler} />
+      <ToastContainer />
     </div>
   );
 }
